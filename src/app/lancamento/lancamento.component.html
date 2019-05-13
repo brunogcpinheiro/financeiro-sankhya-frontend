@@ -1,1 +1,24 @@
-<h1>Ola, bem vindo!</h1>
+<h1>{{ title }}</h1>
+
+<ul>
+  <div *ngIf="response">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <th>Id</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>Vencimento</th>
+        <th>Tipo</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let lancamento of response">
+          <td>{{lancamento.id}}</td>
+          <td>{{lancamento.descricao}}</td>
+          <td>{{lancamento.valor}}</td>
+          <td>{{lancamento.vencimento}}</td>
+          <td>{{lancamento.tipo}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ul>
