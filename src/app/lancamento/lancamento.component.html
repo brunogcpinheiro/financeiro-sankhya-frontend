@@ -1,24 +1,26 @@
-<h1>{{ title }}</h1>
+<div class="content">
+    <button class="btn novo-lancamento">Novo Lançamento</button>
 
-<ul>
-  <div *ngIf="response">
-    <table class="table table-bordered table-hover">
-      <thead>
-        <th>Id</th>
-        <th>Descrição</th>
-        <th>Valor</th>
-        <th>Vencimento</th>
-        <th>Tipo</th>
-      </thead>
-      <tbody>
-        <tr *ngFor="let lancamento of response">
-          <td>{{lancamento.id}}</td>
-          <td>{{lancamento.descricao}}</td>
-          <td>{{lancamento.valor}}</td>
-          <td>{{lancamento.vencimento}}</td>
-          <td>{{lancamento.tipo}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</ul>
+    <ul>
+      <div *ngIf="response">
+        <table class="table table-bordered table-hover text-center">
+          <thead class="thead-dark">
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Vencimento</th>
+            <th>Tipo</th>
+            <th>Ação</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let lancamento of response">
+              <td class="align-middle">{{lancamento.descricao}}</td>
+              <td class="align-middle">R$ {{lancamento.valor}}</td>
+              <td class="align-middle">{{lancamento.vencimento}}</td>
+              <td class="align-middle">{{lancamento.tipo}}</td>
+              <td class="align-middle"><button class="btn btn-danger btn-small delete">X</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ul>
+</div>

@@ -1,0 +1,13 @@
+.content {
+	width: 100%;
+}
+
+.novo-lancamento {
+	background: #4d843c;
+	color: #fff;
+	margin: 0 0 40px 40px;
+}
+
+.delete {
+	width: 100%;
+}

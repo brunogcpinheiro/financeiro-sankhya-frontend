@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Lancamento } from "./lancamento";
 
 @Component({
 	selector: "app-lancamento",
@@ -22,6 +23,18 @@ export class LancamentoComponent implements OnInit {
 			},
 			error => {
 				console.log("Aconteceu um erro: ", error);
+			},
+		);
+	}
+
+	novoLancamento (lancamento: Lancamento) {
+		let body = JSON.stringify(lancamento);
+		return this._http.post(`${this.API_URL}/lancamento`, body).subscribe(
+			response => {
+				console.log(response);
+			},
+			error => {
+				console.log("Aconteceu algum erro: ", error);
 			},
 		);
 	}
