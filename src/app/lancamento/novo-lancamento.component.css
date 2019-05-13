@@ -1,5 +1,19 @@
-.voltar {
+.botao,
+.salvar {
 	background: #4d843c;
 	color: #fff;
-	margin: -50px 0 40px 40px;
+	margin: -100px 0 40px 40px;
+}
+
+.salvar {
+	margin: 0;
+}
+
+.formulario {
+	width: 70%;
+	margin: 0 auto;
+}
+
+::placeholder {
+	opacity: 0.5;
 }

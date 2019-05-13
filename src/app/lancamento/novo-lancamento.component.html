@@ -1,3 +1,43 @@
-<a routerLink="" class="btn voltar">Voltar</a>
+<a routerLink="" class="btn botao">Voltar</a>
 
-<h1>Ola</h1>
+<div class="formulario">
+  <h2>Novo Lançamento</h2>
+  <hr>
+  <form action="">
+    <div class="form-group">
+      <label for="descricao">Descrição do lançamento</label>
+      <div class="input-group">
+          <input class="form-control" type="text" placeholder="Ex.: Conta da Cemig..." id="descricao" />
+      </div>
+      <br />
+      <label for="valor">Valor</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">R$</span>
+        </div>
+        <input type="text" class="form-control" id="valor" placeholder="258,62">
+      </div>
+      <br />
+      <label for="vencimento">Vencimento</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="vencimento" placeholder="20/05/2019">
+      </div>
+      <br />
+      <label>Tipo</label>
+      <div class="input-group">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="1" value="1">
+          <label class="form-check-label" for="1">RECEITA</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="2" value="2">
+          <label class="form-check-label" for="2">DESPESA</label>
+        </div>
+      </div>
+      <br />
+      <div class="input-group">
+        <button class="btn salvar">Salvar</button>
+      </div>
+    </div>
+  </form>
+</div>
