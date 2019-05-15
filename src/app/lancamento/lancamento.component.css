@@ -11,3 +11,11 @@
 .delete {
 	width: 100%;
 }
+
+.receita {
+	color: #78e08f;
+}
+
+.despesa {
+	color: #e55039;
+}

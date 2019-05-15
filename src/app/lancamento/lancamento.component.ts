@@ -12,7 +12,7 @@ export class LancamentoComponent implements OnInit {
 		this.listarLancamentos();
 	}
 
-	lancamentos: Lancamento[];
+	lancamentos: Lancamento[] = [];
 
 	constructor (
 		private router: Router,

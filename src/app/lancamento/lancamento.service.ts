@@ -5,7 +5,10 @@ import { Lancamento } from "./lancamento";
 import { Injectable } from "@angular/core";
 
 const httpOptions = {
-	headers: new HttpHeaders({ "Content-Type": "application/json" }),
+	headers: new HttpHeaders({
+		"Content-Type": "application/json",
+		responseType: "text",
+	}),
 };
 
 const API_URL = "http://localhost:8080/financeiro/api";
@@ -22,16 +25,14 @@ export class LancamentoService {
 
 	adicionarLancamento (lancamento: Lancamento): Observable<Lancamento> {
 		return this.http
-			.post<Lancamento>(
-				`${API_URL}/lancamento`,
-				JSON.stringify(lancamento),
-				httpOptions,
-			)
+			.post<Lancamento>(`${API_URL}/lancamento`, lancamento, httpOptions)
 			.pipe(catchError(this.handleError<Lancamento>("adicionarLancamento")));
 	}
 
 	deletarLancamento (id: string) {
-		return this.http.delete(`${API_URL}/lancamento/${id}`);
+		return this.http
+			.delete(`${API_URL}/lancamento/${id}`)
+			.pipe(catchError(this.handleError<Lancamento>("deletarLancamento")));
 	}
 
 	private handleError<T> (operation = "operation", result?: T) {
