@@ -17,3 +17,8 @@
 ::placeholder {
 	opacity: 0.5;
 }
+
+.validator {
+	font-size: 0.7rem;
+	color: tomato;
+}

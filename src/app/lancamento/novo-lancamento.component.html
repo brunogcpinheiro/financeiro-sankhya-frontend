@@ -1,43 +1,50 @@
 <a routerLink="" class="btn botao">Voltar</a>
 
 <div class="formulario">
-  <h2>Novo Lançamento</h2>
-  <hr>
-  <form action="">
+  <h2 class="text-center">Adicionar Lançamento</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
     <div class="form-group">
-      <label for="descricao">Descrição do lançamento</label>
-      <div class="input-group">
-          <input class="form-control" type="text" placeholder="Ex.: Conta da Cemig..." id="descricao" />
+      <label>Descrição:</label>
+      <input type="text" formControlName="descricao" class="form-control" placeholder="Descrição..." [ngClass]="{ 'is-invalid': submitted && f.descricao.errors }">
+      <div *ngIf="submitted && f.descricao.errors">
+        <div *ngIf="f.descricao.errors.required" class="validator">Insira uma descrição</div>
       </div>
-      <br />
-      <label for="valor">Valor</label>
+    </div>
+
+    <div class="form-group">
+      <label>Valor:</label>
       <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text">R$</span>
         </div>
-        <input type="text" class="form-control" id="valor" placeholder="258,62">
+        <input type="text" formControlName="valor" class="form-control" placeholder="Valor..." [ngClass]="{ 'is-invalid': submitted && f.valor.errors }">
       </div>
-      <br />
-      <label for="vencimento">Vencimento</label>
-      <div class="input-group">
-        <input type="text" class="form-control" id="vencimento" placeholder="20/05/2019">
-      </div>
-      <br />
-      <label>Tipo</label>
-      <div class="input-group">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="1" value="1">
-          <label class="form-check-label" for="1">RECEITA</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="2" value="2">
-          <label class="form-check-label" for="2">DESPESA</label>
-        </div>
-      </div>
-      <br />
-      <div class="input-group">
-        <button class="btn salvar">Salvar</button>
+      <div *ngIf="submitted && f.valor.errors">
+        <div *ngIf="f.valor.errors.required" class="validator">Insira um valor</div>
       </div>
     </div>
+
+    <div class="form-group">
+      <label>Vencimento:</label>
+      <input type="text" formControlName="vencimento" class="form-control" placeholder="Descrição..." [ngClass]="{ 'is-invalid': submitted && f.vencimento.errors }">
+      <div *ngIf="submitted && f.vencimento.errors">
+        <div *ngIf="f.vencimento.errors.required" class="validator">Insira uma data de vencimento</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Tipo: </label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tipo" id="1" value="RECEITA" formControlName="tipo" [ngClass]="{ 'is-invalid': submitted && f.descricao.errors }">
+        <label class="form-check-label" for="1">RECEITA</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tipo" id="2" value="DESPESA" formControlName="tipo" [ngClass]="{ 'is-invalid': submitted && f.descricao.errors }">
+        <label class="form-check-label" for="2">DESPESA</label>
+      </div>
+    </div>
+
+    <button type="submit">Save</button>
   </form>
 </div>

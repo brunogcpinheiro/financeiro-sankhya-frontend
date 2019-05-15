@@ -2,7 +2,7 @@
     <a routerLink="novo" class="btn novo-lancamento">Novo Lançamento</a>
 
     <ul>
-      <div *ngIf="response">
+      <div *ngIf="lancamentos">
         <table class="table table-bordered table-hover text-center">
           <thead class="thead-dark">
             <th>Descrição</th>
@@ -12,12 +12,12 @@
             <th>Ação</th>
           </thead>
           <tbody>
-            <tr *ngFor="let lancamento of response">
+            <tr *ngFor="let lancamento of lancamentos">
               <td class="align-middle">{{lancamento.descricao}}</td>
               <td class="align-middle">R$ {{lancamento.valor}}</td>
               <td class="align-middle">{{lancamento.vencimento}}</td>
               <td class="align-middle">{{lancamento.tipo}}</td>
-              <td class="align-middle"><button class="btn btn-danger btn-small delete">X</button></td>
+              <td class="align-middle"><button class="btn btn-danger btn-small delete" (click)="deletarLancamento(lancamento)">X</button></td>
             </tr>
           </tbody>
         </table>
