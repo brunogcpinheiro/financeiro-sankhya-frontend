@@ -35,11 +35,11 @@
 
     <div class="form-group">
       <label>Tipo: </label>
-      <div class="form-check form-check-inline">
+      <div class="form-check">
         <input class="form-check-input" type="radio" name="tipo" id="1" value="RECEITA" formControlName="tipo" [ngClass]="{ 'is-invalid': submitted && f.descricao.errors }">
         <label class="form-check-label" for="1">RECEITA</label>
       </div>
-      <div class="form-check form-check-inline">
+      <div class="form-check">
         <input class="form-check-input" type="radio" name="tipo" id="2" value="DESPESA" formControlName="tipo" [ngClass]="{ 'is-invalid': submitted && f.descricao.errors }">
         <label class="form-check-label" for="2">DESPESA</label>
       </div>
