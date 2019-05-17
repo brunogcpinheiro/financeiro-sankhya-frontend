@@ -7,19 +7,18 @@ import { Injectable } from "@angular/core";
 const httpOptions = {
 	headers: new HttpHeaders({
 		"Content-Type": "application/json",
-		responseType: "text",
+		responseType: "json",
 	}),
 };
 
 const API_URL = "http://localhost:8080/financeiro/api";
-
 @Injectable()
 export class LancamentoService {
 	constructor (private http: HttpClient) {}
 
 	listarLancamentos (): Observable<Lancamento[]> {
 		return this.http
-			.get<Lancamento[]>(`${API_URL}/lancamentos`)
+			.get<Lancamento[]>(`${API_URL}/lancamentos`, httpOptions)
 			.pipe(catchError(this.handleError("listarLancamentos", [])));
 	}
 
@@ -31,7 +30,7 @@ export class LancamentoService {
 
 	deletarLancamento (id: string) {
 		return this.http
-			.delete(`${API_URL}/lancamento/${id}`)
+			.delete(`${API_URL}/lancamento/${id}`, httpOptions)
 			.pipe(catchError(this.handleError<Lancamento>("deletarLancamento")));
 	}
 

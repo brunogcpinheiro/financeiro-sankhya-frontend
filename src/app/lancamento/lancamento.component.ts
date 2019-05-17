@@ -13,6 +13,8 @@ export class LancamentoComponent implements OnInit {
 	}
 
 	lancamentos: Lancamento[] = [];
+	receitas: any;
+	despesas: any;
 
 	constructor (
 		private router: Router,
@@ -32,7 +34,6 @@ export class LancamentoComponent implements OnInit {
 
 	deletarLancamento (lancamento: Lancamento) {
 		this.lancamentoService.deletarLancamento(lancamento.id).subscribe(data => {
-			console.log(data);
 			this.router.navigate([ "" ]);
 			this.listarLancamentos();
 		});

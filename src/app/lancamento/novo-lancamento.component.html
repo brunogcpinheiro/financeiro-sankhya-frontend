@@ -6,7 +6,7 @@
 
     <div class="form-group">
       <label>Descrição:</label>
-      <input type="text" formControlName="descricao" class="form-control" placeholder="Descrição..." [ngClass]="{ 'is-invalid': submitted && f.descricao.errors }">
+      <input type="text" formControlName="descricao" class="form-control" placeholder="Conta da Cemig..." [ngClass]="{ 'is-invalid': submitted && f.descricao.errors }">
       <div *ngIf="submitted && f.descricao.errors">
         <div *ngIf="f.descricao.errors.required" class="validator">Insira uma descrição</div>
       </div>
@@ -18,7 +18,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text">R$</span>
         </div>
-        <input type="text" formControlName="valor" class="form-control" placeholder="Valor..." [ngClass]="{ 'is-invalid': submitted && f.valor.errors }">
+        <input type="text" formControlName="valor" class="form-control" placeholder="258,60" [ngClass]="{ 'is-invalid': submitted && f.valor.errors }">
       </div>
       <div *ngIf="submitted && f.valor.errors">
         <div *ngIf="f.valor.errors.required" class="validator">Insira um valor</div>
@@ -27,7 +27,7 @@
 
     <div class="form-group">
       <label>Vencimento:</label>
-      <input type="text" formControlName="vencimento" class="form-control" placeholder="Descrição..." [ngClass]="{ 'is-invalid': submitted && f.vencimento.errors }">
+      <input type="text" formControlName="vencimento" class="form-control" placeholder="20/05/2019" [ngClass]="{ 'is-invalid': submitted && f.vencimento.errors }">
       <div *ngIf="submitted && f.vencimento.errors">
         <div *ngIf="f.vencimento.errors.required" class="validator">Insira uma data de vencimento</div>
       </div>
@@ -42,6 +42,9 @@
       <div class="form-check">
         <input class="form-check-input" type="radio" name="tipo" id="2" value="DESPESA" formControlName="tipo" [ngClass]="{ 'is-invalid': submitted && f.descricao.errors }">
         <label class="form-check-label" for="2">DESPESA</label>
+      </div>
+      <div *ngIf="submitted && f.tipo.errors">
+        <div *ngIf="f.tipo.errors.required" class="validator">Escolha uma das opções</div>
       </div>
     </div>
 

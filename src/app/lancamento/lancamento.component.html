@@ -1,36 +1,39 @@
 <div class="content">
     <a routerLink="novo" class="btn novo-lancamento">Novo Lançamento</a>
+    <div class="row">
+        <ul class="col-md-8">
+            <div *ngIf="lancamentos.length > 0; else elseBlock">
+              <table class="table table-bordered table-hover text-center">
+                <thead class="thead-dark">
+                  <th>Descrição</th>
+                  <th>Valor</th>
+                  <th>Vencimento</th>
+                  <th>Ação</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let lancamento of lancamentos">
+                    <td class="align-middle">{{lancamento.descricao}}</td>
+                    <td class="align-middle">
+                      <div *ngIf="lancamento.tipo === 'RECEITA'" class="receita">
+                          R$ {{lancamento.valor}}
+                      </div>
+                      <div *ngIf="lancamento.tipo === 'DESPESA'" class="despesa">
+                         - R$ {{lancamento.valor}}
+                      </div>
+                    </td>
+                    <td class="align-middle">{{lancamento.vencimento}}</td>
+                    <td class="align-middle">
+                      <button class="btn btn-danger btn-small delete" (click)="deletarLancamento(lancamento)">
+                        <i class="fa fa-trash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <ng-template #elseBlock>Sem lançamentos no momento. Adicione um clicando no botão acima.</ng-template>
+          </ul>
 
-    <ul>
-      <div *ngIf="lancamentos.length > 0; else elseBlock">
-        <table class="table table-bordered table-hover text-center">
-          <thead class="thead-dark">
-            <th>Descrição</th>
-            <th>Valor</th>
-            <th>Vencimento</th>
-            <th>Ação</th>
-          </thead>
-          <tbody>
-            <tr *ngFor="let lancamento of lancamentos">
-              <td class="align-middle">{{lancamento.descricao}}</td>
-              <td class="align-middle">
-                <div *ngIf="lancamento.tipo === 'RECEITA'" class="receita">
-                    R$ {{lancamento.valor}}
-                </div>
-                <div *ngIf="lancamento.tipo === 'DESPESA'" class="despesa">
-                   - R$ {{lancamento.valor}}
-                </div>
-              </td>
-              <td class="align-middle">{{lancamento.vencimento}}</td>
-              <td class="align-middle">
-                <button class="btn btn-danger btn-small delete" (click)="deletarLancamento(lancamento)">
-                  <i class="fa fa-trash"></i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <ng-template #elseBlock>Sem lançamentos no momento. Adicione um clicando no botão acima.</ng-template>
-    </ul>
+          <app-chart class="col-md-4"></app-chart>
+    </div>
 </div>
