@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { catchError } from "rxjs/operators";
 import { Lancamento } from "./lancamento";
 import { Injectable } from "@angular/core";
+import { environment } from "../../environments/environment";
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -11,7 +12,7 @@ const httpOptions = {
 	}),
 };
 
-const API_URL = "http://localhost:8080/financeiro/api";
+const API_URL = environment.apiURL;
 @Injectable()
 export class LancamentoService {
 	constructor (private http: HttpClient) {}

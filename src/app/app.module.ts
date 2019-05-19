@@ -4,15 +4,23 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule } from "@angular/forms";
 import { ChartsModule } from "ng2-charts";
+import { registerLocaleData } from "@angular/common";
+import pt from "@angular/common/locales/pt";
+registerLocaleData(pt, "pt");
 
 import { AppComponent } from "./app.component";
 import { LancamentoComponent } from "./lancamento/lancamento.component";
 import { NovoLancamentoComponent } from "./lancamento/novo-lancamento.component";
 import { LancamentoService } from "./lancamento/lancamento.service";
-import { ChartComponent } from './chart/chart.component';
+import { ChartComponent } from "./chart/chart.component";
 
 @NgModule({
-	declarations: [ AppComponent, LancamentoComponent, NovoLancamentoComponent, ChartComponent ],
+	declarations: [
+		AppComponent,
+		LancamentoComponent,
+		NovoLancamentoComponent,
+		ChartComponent,
+	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
@@ -20,7 +28,13 @@ import { ChartComponent } from './chart/chart.component';
 		ReactiveFormsModule,
 		ChartsModule,
 	],
-	providers: [ LancamentoService ],
+	providers: [
+		LancamentoService,
+		{
+			provide: pt,
+			useValue: "pt",
+		},
+	],
 	bootstrap: [ AppComponent ],
 })
 export class AppModule {}

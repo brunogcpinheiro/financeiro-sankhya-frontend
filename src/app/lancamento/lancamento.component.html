@@ -15,10 +15,10 @@
                     <td class="align-middle">{{lancamento.descricao}}</td>
                     <td class="align-middle">
                       <div *ngIf="lancamento.tipo === 'RECEITA'" class="receita">
-                          R$ {{lancamento.valor}}
+                          {{ lancamento.valor | currency:'BRL':symbol:'1.2-2':'pt' }}
                       </div>
                       <div *ngIf="lancamento.tipo === 'DESPESA'" class="despesa">
-                         - R$ {{lancamento.valor}}
+                         -{{ lancamento.valor | currency:'BRL':symbol:'1.2-2':'pt' }}
                       </div>
                     </td>
                     <td class="align-middle">{{lancamento.vencimento}}</td>
