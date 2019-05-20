@@ -56,13 +56,19 @@ export class ChartComponent implements OnInit {
 						},
 					},
 					tooltips: {
-			          callbacks: {
-			            label: function(tooltipItem, data) {
-			            	let valor = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]
-			            	return valor.toLocaleString("pt-BR",{style:"currency", currency:"BRL"})
-			            },
-			          }
-			        },
+						callbacks: {
+							label: function (tooltipItem, data) {
+								let valor =
+									data.datasets[tooltipItem.datasetIndex].data[
+										tooltipItem.index
+									];
+								return valor.toLocaleString("pt-BR", {
+									style: "currency",
+									currency: "BRL",
+								});
+							},
+						},
+					},
 				},
 			});
 		});

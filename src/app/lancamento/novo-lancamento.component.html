@@ -18,13 +18,13 @@
         <div class="input-group-prepend">
           <span class="input-group-text">R$</span>
         </div>
-        <input 
-          currencyMask 
-          [options]="{ prefix: '', thousands: '.', decimal: ',', align: 'left' }" 
-          type="text" 
-          formControlName="valor" 
-          class="form-control" 
-          placeholder="258,60" 
+        <input
+          currencyMask
+          [options]="{ prefix: '', thousands: '.', decimal: ',', align: 'left' }"
+          type="text"
+          formControlName="valor"
+          class="form-control"
+          placeholder="258,60"
           [ngClass]="{ 'is-invalid': submitted && f.valor.errors }">
       </div>
       <div *ngIf="submitted && f.valor.errors">
@@ -40,12 +40,12 @@
           <i class="fa fa-calendar-alt"></i>
         </span>
       </div>
-      <input 
-        type="text" 
-        bsDatepicker 
-        formControlName="vencimento" 
-        class="form-control" 
-        placeholder="Selecionar data..." 
+      <input
+        type="text"
+        bsDatepicker
+        formControlName="vencimento"
+        class="form-control"
+        placeholder="Selecionar data..."
         [ngClass]="{ 'is-invalid': submitted && f.vencimento.errors }"
         [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }">
     </div>

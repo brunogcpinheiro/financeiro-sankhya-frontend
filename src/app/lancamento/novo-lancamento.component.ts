@@ -36,23 +36,14 @@ export class NovoLancamentoComponent implements OnInit {
 
 	onSubmit () {
 		this.submitted = true;
-		
+
 		const dados = this.addForm.value;
 
-		// const dadosFormatados = {
-		// 	...dados, 
-		// 	valor: this.addForm.value.valor.toLocaleString("en-US")
-		// }
-
-		//console.log(dados);
-
 		if (this.addForm.valid) {
-			this.lancamentoService
-				.adicionarLancamento(dados)
-				.subscribe(data => {
-					console.log(data);
-					this.router.navigate([ "" ]);
-				});
+			this.lancamentoService.adicionarLancamento(dados).subscribe(data => {
+				console.log(data);
+				this.router.navigate([ "" ]);
+			});
 		}
 	}
 
