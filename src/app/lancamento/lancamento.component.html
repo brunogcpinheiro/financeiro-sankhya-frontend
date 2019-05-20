@@ -21,7 +21,7 @@
                          -{{ lancamento.valor | currency:'BRL':symbol:'1.2-2':'pt' }}
                       </div>
                     </td>
-                    <td class="align-middle">{{lancamento.vencimento}}</td>
+                    <td class="align-middle">{{lancamento.vencimento | date: 'dd/MM/yyyy'}}</td>
                     <td class="align-middle">
                       <button class="btn btn-danger btn-small delete" (click)="deletarLancamento(lancamento)">
                         <i class="fa fa-trash"></i>
