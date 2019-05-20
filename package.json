@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port $PORT --host $IP --disableHostCheck",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -24,6 +24,7 @@
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
     "ng2-charts": "^2.2.3",
+    "ng2-currency-mask": "^5.3.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"

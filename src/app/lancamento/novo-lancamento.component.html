@@ -18,7 +18,14 @@
         <div class="input-group-prepend">
           <span class="input-group-text">R$</span>
         </div>
-        <input type="text" formControlName="valor" class="form-control" placeholder="258,60" [ngClass]="{ 'is-invalid': submitted && f.valor.errors }">
+        <input 
+          currencyMask 
+          [options]="{ prefix: '', thousands: '.', decimal: ',', align: 'left' }" 
+          type="text" 
+          formControlName="valor" 
+          class="form-control" 
+          placeholder="258,60" 
+          [ngClass]="{ 'is-invalid': submitted && f.valor.errors }">
       </div>
       <div *ngIf="submitted && f.valor.errors">
         <div *ngIf="f.valor.errors.required" class="validator">Insira um valor</div>

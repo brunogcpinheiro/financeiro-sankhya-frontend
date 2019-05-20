@@ -5,6 +5,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule } from "@angular/forms";
 import { ChartsModule } from "ng2-charts";
 import { registerLocaleData } from "@angular/common";
+import { CurrencyMaskModule } from "ng2-currency-mask"
 import pt from "@angular/common/locales/pt";
 registerLocaleData(pt, "pt");
 
@@ -27,6 +28,7 @@ import { ChartComponent } from "./chart/chart.component";
 		HttpClientModule,
 		ReactiveFormsModule,
 		ChartsModule,
+		CurrencyMaskModule
 	],
 	providers: [
 		LancamentoService,
