@@ -7,7 +7,7 @@
 		"build": "ng build",
 		"test": "ng test",
 		"lint": "ng lint",
-		"postinstall": "ng build  --prod",
+		"postinstall": "npm run build",
 		"e2e": "ng e2e"
 	},
 	"private": true,
