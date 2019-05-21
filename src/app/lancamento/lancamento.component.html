@@ -34,6 +34,8 @@
             <ng-template #elseBlock>Sem lançamentos no momento. Adicione um clicando no botão acima.</ng-template>
           </ul>
 
-          <app-chart class="col-md-4"></app-chart>
+          <div class="col-md-4">
+            <canvas id="canvas" width="150" height="150">{{ chart }}</canvas>
+          </div>
     </div>
 </div>

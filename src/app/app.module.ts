@@ -14,15 +14,9 @@ import { AppComponent } from "./app.component";
 import { LancamentoComponent } from "./lancamento/lancamento.component";
 import { NovoLancamentoComponent } from "./lancamento/novo-lancamento.component";
 import { LancamentoService } from "./lancamento/lancamento.service";
-import { ChartComponent } from "./chart/chart.component";
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		LancamentoComponent,
-		NovoLancamentoComponent,
-		ChartComponent,
-	],
+	declarations: [ AppComponent, LancamentoComponent, NovoLancamentoComponent ],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
